@@ -18,8 +18,34 @@
               var h = date.getHours(); // Returns 0 - 23 (24h clock)
               var m = date.getMinutes(); // Returns 0 - 59
               var s = date.getSeconds(); // Returns 0 - 59
+              var session = "AM";
+             
+             if (h == 0) {
+                  h = 12; // changing 0 hour to 12 hour
+             }
               
-              var time = h + ":" + m + ":" + s; // this defines the time structure 
+             if (h > 12){
+                  h = h - 12; // fixing the hour from being 24 h to 12 h display
+                  session = "PM";
+             }
+             
+             h = (h < 10) ? "0" + h : h; // this is a condition, when it is true, it'll populate (0 + h), if not, h.
+             m = (m < 10) ? "0" + m : m; // this is a condition, when it is true, it'll populate (0 + m), if not, m.
+             s = (s < 10) ? "0" + s : s; // this is a condition, when it is true, it'll populate (0 + s), if not, s.
+                
+             // instead of writing below 6 lines of code //
+             // if (h < 10) {
+             //     h = "0" + h ; // fixing less than 10 hour to show in double digit
+               
+             //if (m < 10) {
+             //     m = "0" + m ; // fixing less than 10 minute to show in double digit
+              
+             // if (s < 10) {
+             //     s = "0" + s ; // fixing less than 10 seconds to show in double digit
+              
+              // instead of writing 6 lines of code //
+                  
+              var time = h + ":" + m + ":" + s + " " + session; // this defines the time structure 
               document.getElementById("MyClockDisplay").innerText = time; // innerText doesn't work in FireFox, to allow crossover web platform
               document.getElementById("MyClockDisplay").innerContent = time; // innerText doesn't work in Internet Explorer, to allow crossover web platform
               
