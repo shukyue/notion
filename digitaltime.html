@@ -3,7 +3,7 @@
     <head>
         
         <title>EC - Digital Clock</title> 
-    </head>
+    </head> <!-- Document Header Ends -->
     
     <body>
       
@@ -24,7 +24,7 @@
               document.getElementById("MyClockDisplay").innerContent = time; // innerText doesn't work in Internet Explorer, to allow crossover web platform
             }
           
-          showTime();
+          setInterval(showTime, 1000);
           
       </script>
     </body>
