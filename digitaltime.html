@@ -3,7 +3,7 @@
     <head>
         
         <title>EC - Digital Clock</title> 
-    </head> <!-- Document Header Ends -->
+    </head> 
     
     <body>
       
@@ -22,9 +22,12 @@
               var time = h + ":" + m + ":" + s; // this defines the time structure 
               document.getElementById("MyClockDisplay").innerText = time; // innerText doesn't work in FireFox, to allow crossover web platform
               document.getElementById("MyClockDisplay").innerContent = time; // innerText doesn't work in Internet Explorer, to allow crossover web platform
+              
+                setTimeout(showTime,1000);
             }
           
-          setInterval(showTime, 1000);
+          showTime();
+          
           
       </script>
     </body>
