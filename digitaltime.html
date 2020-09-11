@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Define the clock-->
+        <!-- comment text -->
+        <title>EC - Digital Clock</title> 
+    </head>
+    
+    <body>
+      <!-- create a div element-->
+      <div id="MyClockDisplay"></div>
+      
+      <!-- Add my script for the clock, where it shows the time-->
+      <script type="text/javascript">
+          
+          function showTime()
+            {
+              var date = new Date(); // Defining the day
+              var h = date.getHours(); // Returns 0 - 23 (24h clock)
+              var m = date.getMinutes(); // Returns 0 - 59
+              var s = date.getSeconds(); // Returns 0 - 59
+              
+              var time = h + ":" + m + ":" + s; // this defines the time structure 
+              document.getElementById("MyClockDisplay").innerText = time; // innerText doesn't work in FireFox, to allow crossover web platform
+              document.getElementById("MyClockDisplay").innerContent = time; // innerText doesn't work in Internet Explorer, to allow crossover web platform
+            }
+          
+      </script>
+    </body>
+</html>
